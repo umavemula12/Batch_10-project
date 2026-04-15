@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Pre-processing</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<header id="header">
+				<nav id="nav">
+					<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="model-deployment.html">Model Deployment</a></li>
+							<li>
+								<a href="#">Concepts</a>
+								<ul>
+									<li><a href="model-architecture.html">Model Architeture</a></li>
+									<li>
+										<a href="#">Methodology</a>
+										<ul>
+											<li><a href="dataset.html">Dataset</a></li>
+											<li><a href="preprocessing.html">Preprocessing</a></li>										
+											<li><a href="results.html">Results</a></li>
+										</ul>
+									</li>
+									<li><a href="future-scope.html">Future Scope</a></li>
+								</ul>
+							</li>
+							<li><a href="about-us.html">About Us</a></li>
+					</ul>
+				</nav>
+			</header>
+			<!-- Main -->
+	<div id="main" class="wrapper style1">
+		<div class="container">
+			<header class="major">
+				<h2>Pre-processing</h2>
+			</header>
+
+			<center>
+				<h3>Method I: Multi-Window CT Image Enhancement</h3>
+				<br /><br />
+				<!-- <span class="image"><img src="images/p1.jpg" alt="" /></span> -->
+				<!-- <br /><br /> -->
+
+				<p>
+					In the first preprocessing approach, each non-contrast brain CT slice is processed using clinically relevant Hounsfield Unit (HU) windowing techniques to enhance different anatomical structures. Three standard CT windows are applied: brain window (window level = 40, window width = 80), subdural window (window level = 80, window width = 200), and bone window (window level = 600, window width = 2000). These windows emphasize soft tissue, hemorrhagic regions, and skull boundaries respectively.
+					<br /><br />
+					The three windowed images are concatenated to form a three-channel input representation, enabling the deep learning model to learn complementary features from multiple intensity ranges. To maintain spatial consistency across scans, resampling is applied to standardize pixel spacing. Finally, the images are cropped to retain only the brain region, eliminating redundant background information and improving computational efficiency.
+				</p>
+
+				<br /><br /><br />
+
+				<h3>Method II: Adjacent Slice-Based Spatial Encoding</h3>
+				<br /><br />
+				<!-- <span class="image"><img src="images/p2.jpg" alt="" /></span> -->
+				<!-- <br /><br /> -->
+
+				<p>
+					The second preprocessing method captures inter-slice spatial context by utilizing adjacent CT slices. For each target slice, three consecutive slices are selected and combined to construct a pseudo-RGB image. The previous slice (S<sub>t−1</sub>) is mapped to the red channel, the current slice (S<sub>t</sub>) to the green channel, and the next slice (S<sub>t+1</sub>) to the blue channel.
+					<br /><br />
+					This approach enables the model to learn volumetric continuity and subtle hemorrhagic patterns that may not be visible in a single slice. All slices are processed using the brain window configuration to highlight intracranial structures. Similar to Method I, region-of-interest cropping is applied to focus on diagnostically significant areas, ensuring robust feature extraction and improved classification performance.
+				</p>
+			</center>
+
+		</div>
+	</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

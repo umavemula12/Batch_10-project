@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Model Architeture</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<header id="header">
+				<nav id="nav">
+					<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="model-deployment.html">Model Deployment</a></li>
+							<li>
+								<a href="#">Concepts</a>
+								<ul>
+									<li><a href="model-architecture.html">Model Architeture</a></li>
+									<li>
+										<a href="#">Methodology</a>
+										<ul>
+											<li><a href="dataset.html">Dataset</a></li>
+											<li><a href="preprocessing.html">Preprocessing</a></li>										
+											<li><a href="results.html">Results</a></li>
+										</ul>
+									</li>
+									<li><a href="future-scope.html">Future Scope</a></li>
+								</ul>
+							</li>
+							<li><a href="about-us.html">About Us</a></li>
+					</ul>
+				</nav>
+			</header>
+			<!-- Main -->
+			<div id="main" class="wrapper style1">
+
+				<div class="container">
+					<header class="major">
+						<h2>Model Architeture</h2>
+
+					</header>
+					<center>
+						<span class="image"><img src="images/archtecture.jpeg" alt="" width="750" height="900" /></span>
+						<br /><br /><br/>
+						<p>
+					The proposed model architecture is designed for automated detection and classification of intracranial hemorrhage (ICH) from non-contrast brain CT images. The preprocessed CT slices are provided as input to a deep Convolutional Neural Network (CNN), which serves as the feature extraction backbone. The CNN layers progressively learn hierarchical features ranging from low-level texture patterns to high-level semantic representations associated with hemorrhagic regions.
+					<br /><br />
+					The extracted deep feature maps are passed through global pooling and fully connected layers to reduce dimensionality and enhance discriminative learning. These refined feature vectors are then forwarded to a classification head that predicts the presence or absence of intracranial hemorrhage, along with its specific subtypes, including subarachnoid, intraventricular, subdural, epidural, and intraparenchymal hemorrhages.
+					<br /><br />
+					The model is trained using the training dataset, while the validation dataset is employed to monitor performance, tune hyperparameters, and prevent overfitting. After training, the finalized model is evaluated on an unseen test dataset to assess its generalization capability. This end-to-end architecture enables accurate, efficient, and reliable hemorrhage detection, supporting timely clinical decision-making in emergency diagnostic scenarios.
+				</p>
+					</center>
+					
+				</div>
+				
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
